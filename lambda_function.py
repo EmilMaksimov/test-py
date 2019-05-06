@@ -161,7 +161,7 @@ def source_file_process(tmp_file, target):
         Returns reply message  '''
     logger.info('Case type is {}.'.format(define_excel_sheet(target)))
     sheet_num = define_excel_sheet(target)
-    df = pd.read_excel(tmp_file, sheet_name=sheet_num, index_col=0, skiprows=6, names=['a','b'])
+    df = pd.read_excel(tmp_file, sheet_name=sheet_num, skiprows=6, names=['a','b'])
     logger.info('Looking for {}'.format(target))
     # logger.info(df.head())
     df = df[df['b'].notnull()]
